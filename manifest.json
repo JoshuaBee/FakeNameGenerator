@@ -1,0 +1,21 @@
+{
+  "short_name": "Fake Name",
+  "name": "Fake Name Generator",
+  "description": "Fake Name Generator",
+  "icons": [
+	{
+	  "src": "images/logo/logo-192.png",
+	  "type": "image/png",
+	  "sizes": "192x192"
+	},
+	{
+	  "src": "/images/logo/logo-512.png",
+	  "type": "image/png",
+	  "sizes": "512x512"
+	}
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#6200EE",
+  "theme_color": "#6200EE"
+}
