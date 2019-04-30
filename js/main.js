@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function(event){
 	request.send(null)
 	request.onreadystatechange = function() {
 		if ( request.readyState === 4 && request.status === 200 ) {
-			var profanity = JSON.parse(request.responseText);
+			profanity = JSON.parse(request.responseText);
 			console.log(profanity[0]);
 		}
 	}
