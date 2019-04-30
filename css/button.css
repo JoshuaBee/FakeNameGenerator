@@ -1,0 +1,77 @@
+/*--------------------------------//
+//                                //
+//             Button             //
+//                                //
+//--------------------------------*/
+.text-button {
+	color: #000;
+	color: var(--color-secondary-text);
+	background-color: #F9AA33;
+	background-color: var(--color-secondary);
+	box-sizing: border-box;
+	position: relative;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	outline: 0;
+	border: none;
+	-webkit-tap-highlight-color: transparent;
+	display: inline-block;
+	white-space: nowrap;
+	text-decoration: none;
+	vertical-align: baseline;
+	text-align: center;
+	margin: 0;
+	min-width: 4em;
+	line-height: 2.25em;
+	padding: 0 1em;
+	margin: .5em;
+	border-radius: 0.25em;
+	overflow: visible;
+}
+
+.text-button::before {
+	background-color: #000;
+	/*background-color: var(--color-secondary);*/
+	opacity: 0;
+	transition: opacity .2s ease;
+	border-radius: 0.25em;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+
+	/* Added to prevent buttons moving when hovered. */
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.text-button:hover::before {
+	opacity: 0.2;
+}
+
+.text-button:active::before {
+	opacity: 0.4;
+}
+
+.button > * {
+	display: block;
+}
+
+.button span {
+	padding-bottom: 0.25rem;
+}
+
+.button .material-icons {
+	padding-top: 0.75rem;
+}
+
+@media only screen and (max-device-width: 480px) {
+	.text-button {
+		margin: 0;
+	}
+}

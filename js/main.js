@@ -1,41 +1,84 @@
 document.addEventListener('DOMContentLoaded', function(event){
-	document.getElementById("titleOutput").innerHTML = random(document.getElementById("title").innerHTML)
+	// Load the profanity list
+	var request = new XMLHttpRequest();
+	request.open("GET", "data/profanity_list.json", false);
+	request.send(null)
+	request.onreadystatechange = function() {
+		if ( request.readyState === 4 && request.status === 200 ) {
+			var profanity = JSON.parse(request.responseText);
+			console.log(profanity[0]);
+		}
+	}
+   
+	// Apply generator to the title
+	document.getElementById("titleOutput").innerHTML = generator(document.getElementById("title").innerHTML);
+	
+	// Automatically fill the name textbox, and generate the fake
+	var name = "Joshua Whiting"
+	document.getElementById("name").value = name;
+	generateFromTextBox();
 });
 
-const v = ["a", "e", "i", "o", "u"]
+// Vowel lists
+const input_vowels = ["a", "e", "i", "o", "u", "y"];
+const output_vowels = ["a", "e", "i", "o", "u"];
 
-function random(s) {
+function generator(s) {
 	var r = ""
 	for (var i = 0; i < s.length; i++) {
 		// Character
-		var c = s.charAt(i)
-		
-		// Lower Case Character
-		var l = c.toLowerCase()
+		var c = s.charAt(i);
 		
 		// Check whether character is Upper Case
-		var u = c == c.toUpperCase()
+		var u = c == c.toUpperCase();
 		
-		if (v.indexOf(c) !== -1) {
+		// Lower Case Character
+		var l = c.toLowerCase();
+		
+		if (input_vowels.indexOf(l) !== -1) {
 			
-			// emoving the current selected vowel from the vowel array
-			n = v.filter(item => item !== l)
+			// Removing the current selected vowel from the vowel array
+			n = output_vowels.filter(item => item !== l);
 			
 			// Randomly select the new vowel
-			c = n[Math.floor(Math.random() * (4))]
+			c = n[random()];
 			
 			// Fix the case if required
 			if (u) {
-				c.toUpperCase()
+				c = c.toUpperCase();
 			}
 		}
 		
-		r += c
+		r += c;
 	}
 	
-	return r
+	console.log(r)
+	
+	// Check for profanity
+	if (check_profanity(r)) {
+		r = generator(s);
+	}
+	
+	return r;
 }
 
-function generate(s) {
-	document.getElementById("nameOutput").innerHTML = random(document.getElementById("name").value)
+function random() {
+	return Math.floor(Math.random() * (output_vowels.length - 1));
+}
+
+function generateFromTextBox() {
+	document.getElementById("nameOutput").innerHTML = generator(document.getElementById("name").value);
+}
+
+function check_profanity(s) {
+	c = 0;
+	for(var i = 0; i < profanity.length; i++) {
+		for(var j = 0; j < s.length; j++) {
+			if(profanity[i] == s.substring(j, j + profanity[i].length).toLowerCase()) {
+				c++;
+			}
+		}
+	}
+	
+	return c > 0;
 }
