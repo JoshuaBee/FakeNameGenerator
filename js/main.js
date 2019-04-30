@@ -16,16 +16,16 @@ document.addEventListener('DOMContentLoaded', function(event){
 			console.log(profanity[0]);
 		}
 	}*/
-	var request = new XMLHttpRequest();
-    request.addEventListener("load", function() {
-        profanity = JSON.parse(request.response);
+	var profanity_request = new XMLHttpRequest();
+    profanity_request.addEventListener("load", function() {
+        profanity = JSON.parse(profanity_request.response);
    
 		// Apply generator to the title
 		document.getElementById("titleOutput").innerHTML = generator(document.getElementById("title").innerHTML);
 		
-		var request = new XMLHttpRequest();
-		request.addEventListener("load", function() {
-			names = JSON.parse(request.response);
+		var names_request = new XMLHttpRequest();
+		names_request.addEventListener("load", function() {
+			names = JSON.parse(names_request.response);
 		
 			// Automatically fill the name textbox, and generate the fake
 			var name = random(names);
@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function(event){
 			
 			generateFromTextBox();
 		}, false);
-		request.open("GET", "data/names.json", false);
-		request.send();
+		names_request.open("GET", "data/names.json", false);
+		names_request.send();
     }, false);
-    request.open("GET", "data/profanity_list.json", false);
-    request.send();
+    profanity_request.open("GET", "data/profanity_list.json", false);
+    profanity_request.send();
 	
 	// Check that both profanity and names have been loaded
 	
