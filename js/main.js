@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(event){
 	// Load the profanity list
-	var request = new XMLHttpRequest();
+	/*var request = new XMLHttpRequest();
 	request.open("GET", "data/profanity_list.json", false);
 	request.send(null)
 	request.onreadystatechange = function() {
@@ -8,7 +8,14 @@ document.addEventListener('DOMContentLoaded', function(event){
 			var profanity = JSON.parse(request.responseText);
 			console.log(profanity[0]);
 		}
-	}
+	}*/
+	var request = new XMLHttpRequest();
+    request.addEventListener("load", function() {
+        profanity = JSON.parse(request.response);
+		console.log(profanity[0]);
+    }, false);
+    request.open("GET", "data/profanity_list.json", false);
+    request.send();
    
 	// Apply generator to the title
 	document.getElementById("titleOutput").innerHTML = generator(document.getElementById("title").innerHTML);
