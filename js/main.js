@@ -29,19 +29,19 @@ document.addEventListener('DOMContentLoaded', function(event){
     profanity_request.send();
 	
 	// Check that both profanity and names have been loaded
-	var names_request = new XMLHttpRequest();
-		names_request.addEventListener("load", function() {
-			names = JSON.parse(names_request.response);
+	/*var names_request = new XMLHttpRequest();
+	names_request.addEventListener("load", function() {
+		names = JSON.parse(names_request.response);
+	
+		// Automatically fill the name textbox, and generate the fake
+		var name = random(names);
+		document.getElementById("name").value = name;
+		document.getElementById("name").focus(); 
 		
-			// Automatically fill the name textbox, and generate the fake
-			var name = random(names);
-			document.getElementById("name").value = name;
-			document.getElementById("name").focus(); 
-			
-			generateFromTextBox();
-		}, false);
-		names_request.open("GET", "data/names.json", false);
-		names_request.send();
+		generateFromTextBox();
+	}, false);
+	names_request.open("GET", "data/names.json", false);
+	names_request.send();*/
 });
 
 function generator(s) {
