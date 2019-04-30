@@ -7,16 +7,16 @@ var names;
 
 document.addEventListener('DOMContentLoaded', function(event){
 	// Load the profanity list
-	var request = new XMLHttpRequest();
+	/*var request = new XMLHttpRequest();
 	request.open("GET", "data/profanity_list.json", false);
 	request.send(null)
 	request.onreadystatechange = function() {
 		if ( request.readyState === 4 && request.status === 200 ) {
-			profanity = JSON.parse(request.responseText);
+			profanity = JSON.parse(request.response);
 			console.log(profanity[0]);
 		}
-	}
-	/*var profanity_request = new XMLHttpRequest();
+	}*/
+	var profanity_request = new XMLHttpRequest();
     profanity_request.addEventListener("load", function() {
         profanity = JSON.parse(profanity_request.response);
    
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function(event){
 		
     }, false);
     profanity_request.open("GET", "data/profanity_list.json", false);
-    profanity_request.send();*/
+    profanity_request.send();
 	
 	// Check that both profanity and names have been loaded
 	/*var names_request = new XMLHttpRequest();
