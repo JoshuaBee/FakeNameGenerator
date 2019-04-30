@@ -1,3 +1,9 @@
+// Vowel lists
+const input_vowels = ["a", "e", "i", "o", "u", "y"];
+const output_vowels = ["a", "e", "i", "o", "u"];
+
+var profanity;
+
 document.addEventListener('DOMContentLoaded', function(event){
 	// Load the profanity list
 	/*var request = new XMLHttpRequest();
@@ -13,22 +19,18 @@ document.addEventListener('DOMContentLoaded', function(event){
     request.addEventListener("load", function() {
         profanity = JSON.parse(request.response);
 		console.log(profanity[0]);
+   
+		// Apply generator to the title
+		document.getElementById("titleOutput").innerHTML = generator(document.getElementById("title").innerHTML);
+		
+		// Automatically fill the name textbox, and generate the fake
+		var name = "Joshua Whiting"
+		document.getElementById("name").value = name;
+		generateFromTextBox();
     }, false);
     request.open("GET", "data/profanity_list.json", false);
     request.send();
-   
-	// Apply generator to the title
-	document.getElementById("titleOutput").innerHTML = generator(document.getElementById("title").innerHTML);
-	
-	// Automatically fill the name textbox, and generate the fake
-	var name = "Joshua Whiting"
-	document.getElementById("name").value = name;
-	generateFromTextBox();
 });
-
-// Vowel lists
-const input_vowels = ["a", "e", "i", "o", "u", "y"];
-const output_vowels = ["a", "e", "i", "o", "u"];
 
 function generator(s) {
 	var r = ""
