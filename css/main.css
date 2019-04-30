@@ -29,3 +29,12 @@ body {
 	justify-content: center;
 	flex-direction: column;
 }
+
+input[type=text] {
+	color: #000;
+	color: var(--color-primary-text);
+	background-color: #344955;
+	background-color: var(--color-primary);
+	border: none;
+	border-bottom: var(--color-secondary) 2px solid;
+}

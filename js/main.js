@@ -3,6 +3,7 @@ const input_vowels = ["a", "e", "i", "o", "u", "y"];
 const output_vowels = ["a", "e", "i", "o", "u"];
 
 var profanity;
+var names;
 
 document.addEventListener('DOMContentLoaded', function(event){
 	// Load the profanity list
@@ -18,18 +19,29 @@ document.addEventListener('DOMContentLoaded', function(event){
 	var request = new XMLHttpRequest();
     request.addEventListener("load", function() {
         profanity = JSON.parse(request.response);
-		console.log(profanity[0]);
    
 		// Apply generator to the title
 		document.getElementById("titleOutput").innerHTML = generator(document.getElementById("title").innerHTML);
 		
-		// Automatically fill the name textbox, and generate the fake
-		var name = "Joshua Whiting"
-		document.getElementById("name").value = name;
-		generateFromTextBox();
+		var request = new XMLHttpRequest();
+		request.addEventListener("load", function() {
+			names = JSON.parse(request.response);
+		
+			// Automatically fill the name textbox, and generate the fake
+			var name = random(names);
+			document.getElementById("name").value = name;
+			document.getElementById("name").focus(); 
+			
+			generateFromTextBox();
+		}, false);
+		request.open("GET", "data/names.json", false);
+		request.send();
     }, false);
     request.open("GET", "data/profanity_list.json", false);
     request.send();
+	
+	// Check that both profanity and names have been loaded
+	
 });
 
 function generator(s) {
@@ -50,7 +62,7 @@ function generator(s) {
 			n = output_vowels.filter(item => item !== l);
 			
 			// Randomly select the new vowel
-			c = n[random()];
+			c = random(n);
 			
 			// Fix the case if required
 			if (u) {
@@ -71,8 +83,8 @@ function generator(s) {
 	return r;
 }
 
-function random() {
-	return Math.floor(Math.random() * (output_vowels.length - 1));
+function random(n) {
+	return n[Math.floor(Math.random() * (n))];
 }
 
 function generateFromTextBox() {
