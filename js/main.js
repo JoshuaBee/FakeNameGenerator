@@ -23,7 +23,13 @@ document.addEventListener('DOMContentLoaded', function(event){
 		// Apply generator to the title
 		document.getElementById("titleOutput").innerHTML = generator(document.getElementById("title").innerHTML);
 		
-		var names_request = new XMLHttpRequest();
+		
+    }, false);
+    profanity_request.open("GET", "data/profanity_list.json", false);
+    profanity_request.send();
+	
+	// Check that both profanity and names have been loaded
+	var names_request = new XMLHttpRequest();
 		names_request.addEventListener("load", function() {
 			names = JSON.parse(names_request.response);
 		
@@ -36,12 +42,6 @@ document.addEventListener('DOMContentLoaded', function(event){
 		}, false);
 		names_request.open("GET", "data/names.json", false);
 		names_request.send();
-    }, false);
-    profanity_request.open("GET", "data/profanity_list.json", false);
-    profanity_request.send();
-	
-	// Check that both profanity and names have been loaded
-	
 });
 
 function generator(s) {
