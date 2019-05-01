@@ -30,6 +30,13 @@ body {
 	flex-direction: column;
 }
 
+.divider {
+	width: 2px;
+	height: 50vh;
+	background-color: #F9AA33;
+	background-color: var(--color-secondary);
+}
+
 input[type=text] {
 	color: #000;
 	color: var(--color-primary-text);
