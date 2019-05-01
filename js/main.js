@@ -30,8 +30,18 @@ document.addEventListener('DOMContentLoaded', function(event){
     profanity_request.open("GET", "data/profanity_list.json", false);
     profanity_request.send();
 	
-	// Check that both profanity and names have been loaded
+	// Add event listeners
+	document.getElementById("name").addEventListener("keyup", function(event) {
+		event.preventDefault();
+		if (event.keyCode === 13) {
+			generateFromTextBox();
+		}
+	});
 	
+	document.getElementById("generate").addEventListener("click", function(event) {
+		event.preventDefault();
+		generateFromTextBox();
+	});
 });
 
 function generator(s) {
