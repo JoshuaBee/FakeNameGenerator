@@ -7,36 +7,12 @@ body {
 	/*
 		Primary Color
 	*/
-	--color-primary: #344955;
+	--color-primary: #0071CD;
 	--color-primary-text: #FFF;
-	--color-primary-dark: #0B222C;
-	--color-primary-dark--text: #FFF;
-	--color-primary-light: #5F7481;
-	--color-primary-light-text: #000;
-	
-	/*
-		Secondary Color
-	*/
-	--color-secondary: #F9AA33;
-	--color-secondary-text: #000;
 	
 	/*
 		Background
 	*/
-	--color-background: #FFF;
-	--color-background-text: #000;
-	--color-surface: #FFF;
-	--color-surface-text: #000;
-	--color-error: #B00020;
-	--color-error-text: #FFF;
-}
-
-.color-primary {
-	color: #344955;
-	color: var(--color-primary);
-}
-
-.color-secondary {
-	color: #F9AA33;
-	color: var(--color-secondary);
+	--color-background: #0B233F;
+	--color-background-text: #FFF;
 }

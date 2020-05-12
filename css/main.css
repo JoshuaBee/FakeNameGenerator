@@ -5,9 +5,9 @@
 //--------------------------------*/
 body {
 	color: #FFF;
-	color: var(--color-primary-text);
-	background-color: #344955;
-	background-color: var(--color-primary);
+	color: var(--color-background-text);
+	background-color: #0B233F;
+	background-color: var(--color-background);
 	
 	display: flex;
 	align-items: center;
@@ -33,15 +33,22 @@ body {
 .divider {
 	width: 2px;
 	height: 50vh;
-	background-color: #F9AA33;
-	background-color: var(--color-secondary);
+	background-color: #0071CD;
+	background-color: var(--color-primary);
 }
 
 input[type=text] {
-	color: #000;
-	color: var(--color-primary-text);
-	background-color: #344955;
-	background-color: var(--color-primary);
+	color: #FFF;
+	color: var(--color-background-text);
+	background-color: #0B233F;
+	background-color: var(--color-background);
 	border: none;
-	border-bottom: var(--color-secondary) 2px solid;
+	border-bottom: #0071CD 2px solid;
+	border-bottom: var(--color-primary) 2px solid;
+	text-align: center;
+}
+
+.material-icons {
+	color: #0071CD;
+	color: var(--color-primary);
 }

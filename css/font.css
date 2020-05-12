@@ -63,8 +63,8 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
-	color: #000;
-	color: var(--color-background-text);
+	color: #FFF;
+	color: var(--color-primary-text);
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
