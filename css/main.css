@@ -8,7 +8,9 @@ body {
 	color: var(--color-background-text);
 	background-color: #0B233F;
 	background-color: var(--color-background);
-	
+}
+
+main {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -20,7 +22,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	
-	height: 50vh;
+	height: calc(50vh - 1px);
 	width: 100vw;
 }
 
@@ -54,19 +56,34 @@ input[type=text] {
 	color: var(--color-primary);
 }
 
+footer {
+	position: fixed;
+	bottom: 0;
+	display: none;
+	height: 25vh;
+	width: 100vw;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+}
+
 /* Extra extra large devices (extra large laptops and desktops, 1500px and up) */
 @media only screen and (min-width: 1500px) {
-	body {
+	main {
 		flex-direction: row;
 	}
 
 	.container {	
 		height: 100vh;
-		width: 50vw;
+		width: calc(50vw - 1px);
 	}
 
 	.divider {
 		width: 2px;
 		height: 50vh;
+	}
+
+	footer {
+		display: flex;
 	}
 }
