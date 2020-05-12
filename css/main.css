@@ -12,6 +12,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 }
 
 .container {
@@ -19,8 +20,8 @@ body {
 	align-items: center;
 	justify-content: center;
 	
-	height: 100vh;
-	width: 50vw;
+	height: 50vh;
+	width: 100vw;
 }
 
 .content {
@@ -31,8 +32,8 @@ body {
 }
 
 .divider {
-	width: 2px;
-	height: 50vh;
+	height: 2px;
+	width: 50vw;
 	background-color: #0071CD;
 	background-color: var(--color-primary);
 }
@@ -51,4 +52,21 @@ input[type=text] {
 .material-icons {
 	color: #0071CD;
 	color: var(--color-primary);
+}
+
+/* Extra extra large devices (extra large laptops and desktops, 1500px and up) */
+@media only screen and (min-width: 1500px) {
+	body {
+		flex-direction: row;
+	}
+
+	.container {	
+		height: 100vh;
+		width: 50vw;
+	}
+
+	.divider {
+		width: 2px;
+		height: 50vh;
+	}
 }
