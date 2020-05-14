@@ -3,15 +3,15 @@
 	<head>
 		<title>Fake Name Generator</title>
 		<meta charset="utf-8" />
-		<meta name="author" content="Joshua Whiting" />
+		<meta name="author" content="Joshua Bee" />
 		<meta name="description" content="Fake Name Generator" />
 		<!-- Let browser know website is optimized for mobile -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link rel="icon" type="image/png" href="images/logo/logo-192.png" />
-		<link rel="canonical" href="https://j-whiting.github.io/FakeNameGenerator" />
+		<link rel="canonical" href="https://JoshuaBee.github.io/FakeNameGenerator" />
 
 		<!-- Progressive Web App -->
-		<meta name="theme-color" content="#6200EE" />
+		<meta name="theme-color" content="#0B233F" />
 		<link rel="manifest" href="manifest.json" />
 
 		<!-- CSS Reset -->
@@ -24,18 +24,35 @@
 		<link href="css/main.css" rel="stylesheet" />
 		<!-- Button CSS -->
 		<link href="css/button.css" rel="stylesheet" />
+		<!-- Footer CSS -->
+		<link href="css/footer.css" rel="stylesheet" />
 	</head>
 
 	<body>
-	
+
 		<main>
-			<div class="container">
+			<div class="buttons">
+				<button id="actors" type="button" class="button text-button">
+					<span class="h6">Actors</span>
+				</button>
+				<button id="pokemon" type="button" class="button text-button">
+					<span class="h6">Pokémon</span>
+				</button>
+				<button id="countries" type="button" class="button text-button">
+					<span class="h6">Countries</span>
+				</button>
+				<button id="football-teams" type="button" class="button text-button">
+					<span class="h6">Football Teams</span>
+				</button>
+			</div>
+
+			<header>
 				<div class="content">
 					<h1 id="title" class="h3">Fake Name Generator</h1>
 					<span class="material-icons h3">&#xe5db;</span>
 					<h1 id="titleOutput" class="h3"></h1>
 				</div>
-			</div>
+			</header>
 			
 			<div class="divider"></div>
 			
@@ -53,18 +70,13 @@
 		</main>
 
 		<footer>
-			<button id="actors" type="button" class="button text-button">
-				<span class="h6">Actors</span>
-			</button>
-			<button id="pokemon" type="button" class="button text-button">
-				<span class="h6">Pokémon</span>
-			</button>
-			<button id="countries" type="button" class="button text-button">
-				<span class="h6">Countries</span>
-			</button>
-			<button id="football-teams" type="button" class="button text-button">
-				<span class="h6">Football Teams</span>
-			</button>
+			<a href="https://joshuabee.github.io" target="_blank" rel="noopener noreferrer" class="company" itemscope itemtype="https://schema.org/WebSite">
+				<picture>
+					<source srcset="images/logo/company-logo-192.svg" type="image/svg+xml">
+					<img src="images/logo/company-logo-192.png" class="company-logo" alt="Company Logo" />
+				</picture>
+				<span class="company-name subtitle1">Joshua<br />Bee</span>
+			</a>
 		</footer>
 
 		<!-- Main Javascript -->
