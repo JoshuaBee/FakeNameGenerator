@@ -1,7 +1,7 @@
 {
   "short_name": "Fake Name",
   "name": "Fake Name Generator",
-  "description": "Fake Name Generator",
+  "description": "Enter a name, returns an altered version",
   "icons": [
 	{
 	  "src": "images/logo/logo-192.png",
@@ -16,6 +16,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#0B233F",
-  "theme_color": "#0B233F"
+  "background_color": "#0071CD",
+  "theme_color": "#0071CD"
 }
