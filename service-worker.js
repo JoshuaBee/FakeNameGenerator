@@ -10,7 +10,7 @@ self.addEventListener("install", e => {
 				"/index.html",
 				"/manifest.json",
 				"/sitemap.xml",
-				"/images/icons/arrow-dow-24.svg",
+				"/images/icons/arrow-down-24.svg",
 				"/images/logos/company-logo-192.png",
 				"/images/logos/company-logo-192.svg",
 				"/images/logos/company-logo-512.png",
