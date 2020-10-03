@@ -36,16 +36,16 @@
 
 		<main>
 			<div class="buttons">
-				<button id="actors" type="button" class="button text-button">
+				<button id="actors" type="button" class="button">
 					<span class="button__text">Actors</span>
 				</button>
-				<button id="pokemon" type="button" class="button text-button">
+				<button id="pokemon" type="button" class="button">
 					<span class="button__text">Pokémon</span>
 				</button>
-				<button id="countries" type="button" class="button text-button">
+				<button id="countries" type="button" class="button">
 					<span class="button__text">Countries</span>
 				</button>
-				<button id="football-teams" type="button" class="button text-button">
+				<button id="football-teams" type="button" class="button">
 					<span class="button__text">Football Teams</span>
 				</button>
 			</div>
@@ -61,7 +61,7 @@
 			<div class="container container--2">
 				<label for="name" class="container__label">Enter name:</label>
 				<input id="name" type="text" name="name" class="container__input" placeholder="...">
-				<button id="generate" type="button" class="button text-button">
+				<button id="generate" type="button" class="button">
 					<span class="button__text">Generate</span>
 				</button>
 				<img src="images/icons/arrow-down-24.svg" alt="" class="container__icon" />
@@ -77,9 +77,24 @@
 				</picture>
 				<span class="footer__title">Joshua<br />Bee</span>
 			</a>
+
+			<button id="install" type="button" class="button install-button" aria-hidden="true">
+				<span class="button__text">Install</span>
+			</button>
 		</footer>
 
 		<!-- Main Javascript -->
 		<script src="scripts/main.js"></script>
+		<script>
+			if ('serviceWorker' in navigator) {
+			  navigator.serviceWorker.register('/service-worker.js')
+			  .then(function(registration) {
+				console.log('Service worker registration successful, scope is:', registration.scope);
+			  })
+			  .catch(function(error) {
+				console.log('Service worker registration failed, error:', error);
+			  });
+			}
+		</script>
 	</body>
 </html>
