@@ -58,11 +58,11 @@
 	opacity: 0.4;
 }
 
-.button > * {
-	display: block;
-}
-
-.button span {
+.button__text {
+	font-size: 1.25rem;
+	line-height: 2rem;
+	letter-spacing: 0.009375rem;
+	font-weight: 500;
 	padding-bottom: 0.25rem;
 }
 
