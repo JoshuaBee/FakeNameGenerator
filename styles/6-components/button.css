@@ -3,7 +3,7 @@
 //             Button             //
 //                                //
 //--------------------------------*/
-.text-button {
+.button {
 	color: #FFF;
 	color: var(--color-primary-text);
 	background-color: #0071CD;
@@ -32,7 +32,7 @@
 	overflow: visible;
 }
 
-.text-button::before {
+.button::before {
 	background-color: #FFF;
 	background-color: var(--color-primary-text);
 	opacity: 0;
@@ -50,22 +50,26 @@
 	backface-visibility: hidden;
 }
 
-.text-button:hover::before {
+.button:hover::before {
 	opacity: 0.2;
 }
 
-.text-button:active::before {
+.button:active::before {
 	opacity: 0.4;
 }
 
-.button > * {
-	display: block;
-}
-
-.button span {
+.button__text {
+	font-size: 1.25rem;
+	line-height: 2rem;
+	letter-spacing: 0.009375rem;
+	font-weight: 500;
 	padding-bottom: 0.25rem;
 }
 
-.button .material-icons {
-	padding-top: 0.75rem;
+.install-button {
+	display: inline-block;
+}
+
+.install-button[aria-hidden="true"] {
+	display: none;
 }
