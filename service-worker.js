@@ -1,4 +1,4 @@
-const version = "1.00";
+const version = "1.01";
 const cacheName = "jb-${version}";
 
 self.addEventListener("install", e => {
@@ -22,9 +22,12 @@ self.addEventListener("install", e => {
 				"/scripts/main.js",
 				"/styles/1-settings/color.css",
 				"/styles/3-generic/reset.css",
+				"/styles/4-elements/body.css",
 				"/styles/4-elements/main.css",
 				"/styles/6-components/button.css",
-				"/styles/6-components/footer.css"
+				"/styles/6-components/container.css",
+				"/styles/6-components/footer.css",
+				"/styles/6-components/header.css"
 			])
 			.then(() => self.skipWaiting());
 		})
