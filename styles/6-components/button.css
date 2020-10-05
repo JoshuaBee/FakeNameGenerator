@@ -3,6 +3,22 @@
 //             Button             //
 //                                //
 //--------------------------------*/
+.buttons {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	
+	grid-row: 1;
+	grid-column: 1 / 4;
+}
+
+@media only screen and (min-width: 1500px) {
+	.buttons {
+		display: flex;
+	}
+}
+
 .button {
 	color: #FFF;
 	color: var(--color-primary-text);
