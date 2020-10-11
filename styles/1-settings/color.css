@@ -16,3 +16,19 @@
 	--color-background: #0B233F;
 	--color-background-text: #FFF;
 }
+
+@media (prefers-color-scheme: light) {
+	:root {
+		/*
+			Primary Color
+		*/
+		--color-primary: #0071CD;
+		--color-primary-text: #FFF;
+		
+		/*
+			Background
+		*/
+		--color-background: #EEE;
+		--color-background-text: #000;
+	}
+}
